@@ -1,5 +1,5 @@
 
-Code and records for the manuscript "Coverage Loss of Conformal Prediction Intervals for Battery Cycle Life Under Dataset Shift".
+Code and records for the manuscript *"Coverage Loss of Conformal Prediction Intervals for Battery Cycle Life Under Dataset Shift"*.
 
 The study measures whether conformal interval coverage transfers to held-out datasets, using cycle life predicted from the first 100 cycles.
 
