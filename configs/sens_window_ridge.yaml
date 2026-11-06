@@ -1,0 +1,22 @@
+# Capacity-reference sensitivity for ridge: as pilot3_untuned.yaml, but capacity features of
+# partial-window source cells are scaled by the cycled state-of-charge window.
+
+manifest: dataset_manifest_window.json
+seeds: [0, 1, 2, 3, 4]
+model: ridge
+nominals: [0.90, 0.95]
+bandwidth: 0.3                 # kernel width of the aging-factor distance (weighted variant)
+split_fracs: [0.6, 0.2, 0.2]   # train / source evaluation / calibration, split by cell
+
+# Datasets with fewer cells stay in the source pool but are not held out as targets.
+min_target_cells: 10
+
+checkpoint_dir: checkpoints    # relative to $BATTERY_ROOT
+
+data:
+  type: batterylife
+  root: BatteryLife_Processed  # relative to $BATTERY_ROOT
+  n_cycles: 100                # observation window (first 100 cycles)
+  ref_cycle: 9                 # 0-based reference cycle for the difference curve
+  subsets: [CALCE, HNEI, HUST, MATR, MICH, MICH_EXP, RWTH, SNL, Tongji, UL_PUR, XJTU]
+  capacity_reference: window

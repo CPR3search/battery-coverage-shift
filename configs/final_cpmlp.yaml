@@ -1,0 +1,15 @@
+# CPMLP on the development datasets, with the same splits, seeds and nominal levels as
+# pilot3_untuned.yaml. The published lithium-ion settings are used without tuning.
+seeds: [0, 1, 2, 3, 4]
+model: cpmlp
+nominals: [0.90, 0.95]
+bandwidth: 0.3
+split_fracs: [0.6, 0.2, 0.2]
+min_target_cells: 10
+checkpoint_dir: checkpoints
+data:
+  type: batterylife
+  root: BatteryLife_Processed
+  n_cycles: 100
+  ref_cycle: 9
+  subsets: [CALCE, HNEI, HUST, MATR, MICH, MICH_EXP, RWTH, SNL, Tongji, UL_PUR, XJTU]

@@ -1,0 +1,16 @@
+# Template configuration for per-subject CSV data (not used for the reported results).
+seed: 0
+protocol: loso
+dataset_name: my_csv
+data:
+  type: csv
+  data_dir: data
+  label_col: label
+  pattern: "*.csv"
+  # subject_col: subject   # use when the subject id is a column, not the file name
+  # drop_cols: [timestamp]
+  # feature_cols: null     # default: all columns except label, subject and dropped ones
+model:
+  name: nearest_centroid
+  args:
+    normalize: true

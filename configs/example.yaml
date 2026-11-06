@@ -1,0 +1,12 @@
+# Synthetic smoke-test configuration for `make run` (not used for the reported results).
+seed: 0
+protocol: loso          # loso | grouped_kfold
+k: 5                    # folds for grouped_kfold
+data:
+  n_subjects: 8
+  per_subject: 60
+  dim: 16
+model:
+  name: nearest_centroid
+  args:
+    normalize: true     # normalization fitted on training data only
