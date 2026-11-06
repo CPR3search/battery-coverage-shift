@@ -1,0 +1,25 @@
+# Pinned 2026-08-17 from the working environment on Python 3.13.5.
+# These versions produced every number in paper-diagnosis/. numpy 2.x and
+# pandas 3.x are recent majors, so pin rather than float.
+#
+#   python -m venv .venv && .venv/bin/pip install -r requirements.txt
+#
+# The diagnosis paper's pipeline is scikit-learn only. There is no GPU step and
+# no torch requirement for it; see the extras at the bottom.
+
+numpy==2.5.1
+pandas==3.0.5
+scipy==1.18.0
+scikit-learn==1.9.0
+joblib==1.5.3
+matplotlib==3.11.1
+PyYAML==6.0.3
+
+# Test suite (pytest tests/ is the pre-commit smoke check).
+pytest==9.1.1
+
+# --- Extras, not installed here and not needed to rebuild the manuscript -----
+# huggingface_hub   only for src/download_batterylife.py, which fetches the
+#                   BatteryLife corpus. Needed on a machine that has no data/.
+# torch==2.14.1     only for the CPMLP predictor (src/cpmlp.py, PROTOCOL.md Amendment 8).
+#                   Install from https://download.pytorch.org/whl/cu130, not plain pip.
