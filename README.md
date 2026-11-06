@@ -18,7 +18,7 @@ source .venv/bin/activate
 Two extras are installed only when needed. `huggingface_hub` is for downloading the data.
 
 ## Data
-
+[BatteryLife_Processed](https://huggingface.co/datasets/Battery-Life/BatteryLife_Processed)
 ```bash
 export BATTERY_ROOT=$PWD
 python -m src.download_batterylife --tier pilot
